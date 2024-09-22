@@ -34,10 +34,11 @@
     </script>
   </head>
   <body>
-    <header class="bg-primary pb-10">
+    <header class="bg-primary pb-10 sticky top-0">
       <nav class="flex items-center justify-between w-10/12 mx-auto py-6">
         <div>
           <button
+            id="blog"
             class="bg-secondary font-lexend font-semibold px-8 py-3 rounded-lg text-[20px] leading-[25px]"
           >
             Blog
@@ -54,41 +55,195 @@
           <h2
             class="text-[rgba(17,17,17,0.7)] font-lexend font-medium text-[20px] leading-[25px]"
           >
-            5500 BDT
+            <span id="balance">5500</span> BDT
           </h2>
         </div>
       </nav>
     </header>
     <main class="my-20">
       <section class="w-10/12 mx-auto">
-        <div><button>Donation</button><button>History</button></div>
+        <div class="flex justify-center items-center gap-4">
+          <button
+            class="rounded-lg px-8 py-4 bg-secondary font-lexend font-semibold border border-solid border-[rgba(17,17,17,0.3)] text-[20px] leading-[25px] swicher"
+          >
+            Donation</button
+          ><button
+            class="rounded-lg px-8 py-4 border border-solid border-[rgba(17,17,17,0.3)] font-lexend text-[rgba(17,17,17,0.7)] font-medium text-[20px] leading-[25px] swicher"
+          >
+            History
+          </button>
+        </div>
       </section>
-      <section>
-        <div>
-          <div><img src="./assets/noakhali.png" alt="" /></div>
-          <div>
+      <section class="w-10/12 mx-auto">
+        <div
+          class="mt-8 p-8 border rounded-2xl border-solid border-[rgba(17,17,17,0.1)] flex gap-8"
+        >
+          <div class="w-1/2">
+            <img class="w-full h-full" src="./assets/noakhali.png" alt="" />
+          </div>
+          <div class="w-1/2 flex flex-col justify-between">
             <div>
-              <button>
-                <img src="./assets/logo.png" alt="" />
-                <h2>Donate Bangladesh</h2>
+              <button
+                class="bg-[rgba(17,17,17,0.05)] rounded-lg px-4 gap-2 items-center py-2 flex"
+              >
+                <img src="./assets/coin.png" alt="" />
+                <h2
+                  class="text-[rgba(17,17,17,0.7)] font-lexend font-medium text-[20px] leading-[25px]"
+                >
+                  <span id="tot_donate">0</span> BDT
+                </h2>
               </button>
             </div>
-            <h1></h1>
-            <p></p>
+            <h1
+              id="title"
+              class="font-lexend my-4 font-semibold text-[20px] leading-[30px]"
+            >
+              Donate for Flood at Noakhali, Bangladesh
+            </h1>
+            <p
+              class="font-lexend text-[rgba(17,17,17,0.7)] font-light text-[16px] leading-[26px]"
+            >
+              The recent floods in Noakhali have caused significant damage to
+              homes infrastructure. Your donation will help provide essential
+              supplies and to those affected by this disaster. Every
+              contribution, big or small, makes difference. Please join us in
+              supporting the relief efforts and making a positive impact on the
+              lives of those in need.
+            </p>
+            <div class="flex flex-col mt-6 gap-8">
+              <input
+                class="bg-white rounded-lg p-4 placeholder:[rgba(17,17,17,0.4)] border border-solid font-lexend font-light text-[16px] leading-[20px] border-[rgba(17,17,17,0.1)]"
+                type="text"
+                name=""
+                placeholder="Write Donation Amount"
+                id="amount_inp"
+              />
+              <button
+                id="donate_noakhali"
+                class="bg-secondary px-8 py-4 rounded-lg text-[ rgb(17,17,17)] font-lexend text-[20px] font-semibold leading-[25px]"
+              >
+                Donate Now
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-8 p-8 border rounded-2xl border-solid border-[rgba(17,17,17,0.1)] flex gap-8"
+        >
+          <div class="w-1/2">
+            <img class="w-full h-full" src="./assets/feni.png" alt="" />
+          </div>
+          <div class="w-1/2 flex flex-col justify-between">
             <div>
-              <input type="number" name="" id="" />
-              <button>Donate Now</button>
+              <button
+                class="bg-[rgba(17,17,17,0.05)] rounded-lg px-4 gap-2 items-center py-2 flex"
+              >
+                <img src="./assets/coin.png" alt="" />
+                <h2
+                  class="text-[rgba(17,17,17,0.7)] font-lexend font-medium text-[20px] leading-[25px]"
+                >
+                  <span id="tot_donate1">600</span> BDT
+                </h2>
+              </button>
+            </div>
+            <h1
+              id="title1"
+              class="font-lexend my-4 font-semibold text-[20px] leading-[30px]"
+            >
+              Donate for Flood Relief in Feni,Bangladesh
+            </h1>
+            <p
+              class="font-lexend text-[rgba(17,17,17,0.7)] font-light text-[16px] leading-[26px]"
+            >
+              The recent floods in Feni have devastated local communities,
+              leading to severe disruption and loss. Your generous donation will
+              help provide immediate aid, including food, clean water, and
+              medical supplies, to those affected by this calamity. Together, we
+              can offer crucial support and help rebuild lives in the aftermath
+              of this disaster. Every contribution counts towards making a real
+              difference. Please consider donating today to assist those in
+              urgent need.
+            </p>
+            <div class="flex flex-col mt-6 gap-8">
+              <input
+                class="bg-white rounded-lg p-4 placeholder:[rgba(17,17,17,0.4)] border border-solid font-lexend font-light text-[16px] leading-[20px] border-[rgba(17,17,17,0.1)]"
+                type="text"
+                name=""
+                placeholder="Write Donation Amount"
+                id="amount_inp1"
+              />
+              <button
+                id="donate_feni"
+                class="bg-secondary px-8 py-4 rounded-lg text-[ rgb(17,17,17)] font-lexend text-[20px] font-semibold leading-[25px]"
+              >
+                Donate Now
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-8 p-8 border rounded-2xl border-solid border-[rgba(17,17,17,0.1)] flex gap-8"
+        >
+          <div class="w-1/2">
+            <img
+              class="w-full h-full"
+              src="./assets/quota-protest.png"
+              alt=""
+            />
+          </div>
+          <div class="w-1/2 flex flex-col justify-between">
+            <div>
+              <button
+                class="bg-[rgba(17,17,17,0.05)] rounded-lg px-4 gap-2 items-center py-2 flex"
+              >
+                <img src="./assets/coin.png" alt="" />
+                <h2
+                  class="text-[rgba(17,17,17,0.7)] font-lexend font-medium text-[20px] leading-[25px]"
+                >
+                  <span id="tot_donate2">2400</span> BDT
+                </h2>
+              </button>
+            </div>
+            <h1
+              id="title2"
+              class="font-lexend my-4 font-semibold text-[20px] leading-[30px]"
+            >
+              Aid for Injured in the Quota Movement
+            </h1>
+            <p
+              class="font-lexend text-[rgba(17,17,17,0.7)] font-light text-[16px] leading-[26px]"
+            >
+              The recent Quota movement has resulted in numerous injuries and
+              significant hardship for many individuals. Your support is crucial
+              in providing medical assistance, rehabilitation, and necessary
+              supplies to those affected. By contributing, you help ensure that
+              injured individuals receive the care and support they need during
+              this challenging time. Every donation plays a vital role in
+              alleviating their suffering and aiding in their recovery. Please
+              consider making a donation to support these brave individuals in
+              their time of need.
+            </p>
+            <div class="flex flex-col mt-6 gap-8">
+              <input
+                class="bg-white rounded-lg p-4 placeholder:[rgba(17,17,17,0.4)] border border-solid font-lexend font-light text-[16px] leading-[20px] border-[rgba(17,17,17,0.1)]"
+                type="text"
+                name=""
+                placeholder="Write Donation Amount"
+                id="amount_inp2"
+              />
+              <button
+                id="donate_protest"
+                class="bg-secondary px-8 py-4 rounded-lg text-[ rgb(17,17,17)] font-lexend text-[20px] font-semibold leading-[25px]"
+              >
+                Donate Now
+              </button>
             </div>
           </div>
         </div>
       </section>
-      <section>
-        <div>
-          <h3></h3>
-          <p></p>
-        </div>
-      </section>
+      <section id="history" class="mt-8 w-10/12 mx-auto"></section>
     </main>
-    <footer></footer>
+    <footer class="bg-[rgb(249,247,243)] py-16"></footer>
+    <script src="./index.js"></script>
   </body>
 </html>
