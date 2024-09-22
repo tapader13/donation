@@ -26,7 +26,7 @@ for (const iterator of toggle) {
 //function for get inp val
 function getInpVal(value) {
   const val = document.getElementById(value).value;
-  return parseFloat(val);
+  return Number(val);
 }
 
 //function for get total donate in specific campaign
@@ -49,44 +49,70 @@ function setHistory(amount, title) {
           <p
             class="mt-4 text-[16px] font-light leading-[26px] font-lexend text-[rgba(17,17,17,0.7)]"
           >
-            ${new Date().toString()}
+           Date: ${new Date().toString()}
           </p>
         </div>`;
   return data;
 }
 
+//validate balance
+function checkBalance(val, balance) {}
 //donate work
 document
   .getElementById('donate_noakhali')
   .addEventListener('click', function () {
     const inp_val = getInpVal('amount_inp');
+    const total_balnce = getTotalDonate('balance');
+    if (isNaN(inp_val) || inp_val === 0) {
+      alert('invalid input');
+      return;
+    }
+    if (inp_val > total_balnce) {
+      alert('insufficent balance');
+      return;
+    }
     const tot_donate = getTotalDonate('tot_donate');
     document.getElementById('tot_donate').textContent = tot_donate + inp_val;
-    const total_balnce = getTotalDonate('balance');
+
     document.getElementById('balance').textContent = total_balnce - inp_val;
     document.getElementById('history').innerHTML += setHistory(
       inp_val,
       'title'
     );
+    document.getElementById('my_modal_1').showModal();
   });
 
 document
   .getElementById('donate_protest')
   .addEventListener('click', function () {
     const inp_val = getInpVal('amount_inp2');
+    const total_balnce = getTotalDonate('balance');
+    if (isNaN(inp_val) || inp_val === 0) {
+      alert('invalid input');
+      return;
+    }
+    if (inp_val > total_balnce) {
+      alert('insufficent balance');
+      return;
+    }
     const tot_donate = getTotalDonate('tot_donate2');
     document.getElementById('tot_donate2').textContent = tot_donate + inp_val;
-    const total_balnce = getTotalDonate('balance');
+
     document.getElementById('balance').textContent = total_balnce - inp_val;
     document.getElementById('history').innerHTML += setHistory(
       inp_val,
       'title2'
     );
+    document.getElementById('my_modal_1').showModal();
   });
 
 document.getElementById('donate_feni').addEventListener('click', function () {
   const inp_val = getInpVal('amount_inp1');
   const total_balnce = getTotalDonate('balance');
+  if (isNaN(inp_val) || inp_val === 0) {
+    alert('invalid input');
+    return;
+  }
   if (inp_val > total_balnce) {
     alert('insufficent balance');
     return;
@@ -96,4 +122,15 @@ document.getElementById('donate_feni').addEventListener('click', function () {
 
   document.getElementById('balance').textContent = total_balnce - inp_val;
   document.getElementById('history').innerHTML += setHistory(inp_val, 'title1');
+  document.getElementById('my_modal_1').showModal();
+});
+
+//navigate between button
+document.getElementById('dont').addEventListener('click', function () {
+  document.getElementById('dont_card').classList.remove('hidden');
+  document.getElementById('history').classList.add('hidden');
+});
+document.getElementById('hist').addEventListener('click', function () {
+  document.getElementById('dont_card').classList.add('hidden');
+  document.getElementById('history').classList.remove('hidden');
 });
