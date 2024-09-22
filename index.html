@@ -34,36 +34,39 @@
     </script>
   </head>
   <body>
-    <header class="bg-primary sm:pb-10 sticky top-0">
-      <nav
-        class="flex flex-col sm:flex-row gap-5 sm:gap-0 items-center justify-between w-10/12 mx-auto py-6"
-      >
-        <div>
-          <button
-            id="blog"
-            class="bg-secondary font-lexend font-semibold px-8 py-3 rounded-lg text-[20px] leading-[25px]"
-          >
-            Blog
-          </button>
-        </div>
-        <div class="flex items-center gap-3">
-          <img src="./assets/logo.png" alt="" />
-          <h2 class="font-lexend font-semibold text-[20px] leading-[25px]">
-            Donate Bangladesh
-          </h2>
-        </div>
-        <div class="flex items-center gap-3">
-          <img src="./assets/coin.png" alt="" />
-          <h2
-            class="text-[rgba(17,17,17,0.7)] font-lexend font-medium text-[20px] leading-[25px]"
-          >
-            <span id="balance">5500</span> BDT
-          </h2>
-        </div>
-      </nav>
-    </header>
-    <main class="my-20">
-      <section class="w-10/12 mx-auto">
+    <header
+      class="sticky top-0 transition duration-300 ease-in-out"
+      id="navbar"
+    >
+      <div class="bg-primary sm:pb-10">
+        <nav
+          class="flex flex-col sm:flex-row gap-5 sm:gap-0 items-center justify-between w-10/12 mx-auto py-6"
+        >
+          <div>
+            <button
+              id="blog"
+              class="bg-secondary font-lexend font-semibold px-8 py-3 rounded-lg text-[20px] leading-[25px]"
+            >
+              Blog
+            </button>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="./assets/logo.png" alt="" />
+            <h2 class="font-lexend font-semibold text-[20px] leading-[25px]">
+              Donate Bangladesh
+            </h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="./assets/coin.png" alt="" />
+            <h2
+              class="text-[rgba(17,17,17,0.7)] font-lexend font-medium text-[20px] leading-[25px]"
+            >
+              <span id="balance">5500</span> BDT
+            </h2>
+          </div>
+        </nav>
+      </div>
+      <section class="w-10/12 mx-auto mt-20">
         <div class="flex justify-center items-center gap-4">
           <button
             id="dont"
@@ -78,6 +81,8 @@
           </button>
         </div>
       </section>
+    </header>
+    <main class="mb-20">
       <section id="dont_card" class="w-10/12 mx-auto">
         <div
           class="mt-8 p-8 border rounded-2xl border-solid border-[rgba(17,17,17,0.1)] flex flex-col sm:flex-row gap-8"
@@ -265,6 +270,7 @@
       </dialog>
     </main>
     <footer class="bg-[rgb(249,247,243)] py-16"></footer>
+    <script src="./utilites.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
