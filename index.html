@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: 'rgb(249,247,243);',
+              secondary: 'rgb(180,244,97)',
+            },
+            fontFamily: {
+              lexend: ['Lexend', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <header class="bg-primary pb-10">
+      <nav class="flex items-center justify-between w-10/12 mx-auto py-6">
+        <div>
+          <button
+            class="bg-secondary font-lexend font-semibold px-8 py-3 rounded-lg text-[20px] leading-[25px]"
+          >
+            Blog
+          </button>
+        </div>
+        <div class="flex items-center gap-3">
+          <img src="./assets/logo.png" alt="" />
+          <h2 class="font-lexend font-semibold text-[20px] leading-[25px]">
+            Donate Bangladesh
+          </h2>
+        </div>
+        <div class="flex items-center gap-3">
+          <img src="./assets/coin.png" alt="" />
+          <h2
+            class="text-[rgba(17,17,17,0.7)] font-lexend font-medium text-[20px] leading-[25px]"
+          >
+            5500 BDT
+          </h2>
+        </div>
+      </nav>
+    </header>
+    <main class="my-20">
+      <section class="w-10/12 mx-auto">
+        <div><button>Donation</button><button>History</button></div>
+      </section>
+      <section>
+        <div>
+          <div><img src="./assets/noakhali.png" alt="" /></div>
+          <div>
+            <div>
+              <button>
+                <img src="./assets/logo.png" alt="" />
+                <h2>Donate Bangladesh</h2>
+              </button>
+            </div>
+            <h1></h1>
+            <p></p>
+            <div>
+              <input type="number" name="" id="" />
+              <button>Donate Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div>
+          <h3></h3>
+          <p></p>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
