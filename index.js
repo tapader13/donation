@@ -55,74 +55,39 @@ function setHistory(amount, title) {
   return data;
 }
 
-//validate balance
-function checkBalance(val, balance) {}
 //donate work
+function handleDonation(inputId, totalDonateId, titleId) {
+  const inp_val = getInpVal(inputId);
+  const total_balnce = getTotalDonate('balance');
+  if (isNaN(inp_val) || inp_val === 0 || inp_val < 0) {
+    alert('Invalid input');
+    return;
+  }
+  if (inp_val > total_balnce) {
+    alert('Insufficient balance');
+    return;
+  }
+  const tot_donate = getTotalDonate(totalDonateId);
+  document.getElementById(totalDonateId).textContent = tot_donate + inp_val;
+  document.getElementById('balance').textContent = total_balnce - inp_val;
+  document.getElementById('history').innerHTML += setHistory(inp_val, titleId);
+  document.getElementById('my_modal_1').showModal();
+}
+
 document
   .getElementById('donate_noakhali')
   .addEventListener('click', function () {
-    const inp_val = getInpVal('amount_inp');
-    const total_balnce = getTotalDonate('balance');
-    if (isNaN(inp_val) || inp_val === 0) {
-      alert('invalid input');
-      return;
-    }
-    if (inp_val > total_balnce) {
-      alert('insufficent balance');
-      return;
-    }
-    const tot_donate = getTotalDonate('tot_donate');
-    document.getElementById('tot_donate').textContent = tot_donate + inp_val;
-
-    document.getElementById('balance').textContent = total_balnce - inp_val;
-    document.getElementById('history').innerHTML += setHistory(
-      inp_val,
-      'title'
-    );
-    document.getElementById('my_modal_1').showModal();
+    handleDonation('amount_inp', 'tot_donate', 'title');
   });
 
 document
   .getElementById('donate_protest')
   .addEventListener('click', function () {
-    const inp_val = getInpVal('amount_inp2');
-    const total_balnce = getTotalDonate('balance');
-    if (isNaN(inp_val) || inp_val === 0) {
-      alert('invalid input');
-      return;
-    }
-    if (inp_val > total_balnce) {
-      alert('insufficent balance');
-      return;
-    }
-    const tot_donate = getTotalDonate('tot_donate2');
-    document.getElementById('tot_donate2').textContent = tot_donate + inp_val;
-
-    document.getElementById('balance').textContent = total_balnce - inp_val;
-    document.getElementById('history').innerHTML += setHistory(
-      inp_val,
-      'title2'
-    );
-    document.getElementById('my_modal_1').showModal();
+    handleDonation('amount_inp2', 'tot_donate2', 'title2');
   });
 
 document.getElementById('donate_feni').addEventListener('click', function () {
-  const inp_val = getInpVal('amount_inp1');
-  const total_balnce = getTotalDonate('balance');
-  if (isNaN(inp_val) || inp_val === 0) {
-    alert('invalid input');
-    return;
-  }
-  if (inp_val > total_balnce) {
-    alert('insufficent balance');
-    return;
-  }
-  const tot_donate = getTotalDonate('tot_donate1');
-  document.getElementById('tot_donate1').textContent = tot_donate + inp_val;
-
-  document.getElementById('balance').textContent = total_balnce - inp_val;
-  document.getElementById('history').innerHTML += setHistory(inp_val, 'title1');
-  document.getElementById('my_modal_1').showModal();
+  handleDonation('amount_inp1', 'tot_donate1', 'title1');
 });
 
 //navigate between button
